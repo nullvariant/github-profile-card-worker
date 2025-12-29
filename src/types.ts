@@ -1,6 +1,8 @@
 export interface Env {
 	// KV Namespace for caching (optional)
 	// CACHE: KVNamespace;
+	// Service Binding for analytics
+	ANALYTICS: Fetcher;
 }
 
 export interface GitHubUser {

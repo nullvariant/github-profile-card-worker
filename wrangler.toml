@@ -7,6 +7,11 @@ compatibility_date = "2024-12-29"
 # binding = "CACHE"
 # id = "your-kv-id-here"
 
+# Service Binding (analytics-worker)
+[[services]]
+binding = "ANALYTICS"
+service = "nullvariant-analytics-worker"
+
 # Custom domain
 [[routes]]
 pattern = "card.nullvariant.com/*"
