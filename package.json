@@ -1,0 +1,27 @@
+{
+  "name": "github-profile-card-worker",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "keywords": [
+    "cloudflare-workers",
+    "github",
+    "profile-card",
+    "svg"
+  ],
+  "author": "Null;Variant",
+  "license": "MIT",
+  "description": "Generate retro RPG-style SVG profile cards from GitHub user data",
+  "dependencies": {
+    "hono": "^4.7.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20251225.0",
+    "typescript": "^5.9.3",
+    "wrangler": "^4.54.0"
+  }
+}
