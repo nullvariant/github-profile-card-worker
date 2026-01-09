@@ -16,7 +16,7 @@ app.use("*", async (c, next) => {
 	const userAgent = request.headers.get("user-agent") || "";
 	const referer = request.headers.get("referer") || "";
 	const clientIP = request.headers.get("cf-connecting-ip") || "0.0.0.0";
-	const cf = request.cf as { country?: string; city?: string } | undefined;
+	const cf = request.cf as { country?: string; city?: string; asn?: number } | undefined;
 
 	// Check if request is from test environment (CI/E2E tests send X-Test-Environment header)
 	const isTestAccess = request.headers.get("x-test-environment") === "true";
@@ -35,6 +35,7 @@ app.use("*", async (c, next) => {
 				userAgent: userAgent,
 				referer: referer,
 				isTestAccess: isTestAccess,
+				asn: cf?.asn,
 			}),
 		}).catch(() => {
 			// Analytics failure should not affect main functionality
